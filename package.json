@@ -1,0 +1,10 @@
+{
+  "name": "com.skiif64.DependencyInjection",
+  "version": "1.0.0",
+  "displayName": "Dependency Injection",
+  "description": "Dependency Injection implementation",
+  "unity": "2022.3",
+  "author": {
+    "name": "Skiif64"
+  }
+}
