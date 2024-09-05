@@ -1,6 +1,6 @@
 {
     "name": "DependencyInjection",
-    "rootNamespace": "",
+    "rootNamespace": "DependencyInjection",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
