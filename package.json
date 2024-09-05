@@ -1,5 +1,5 @@
 {
-  "name": "com.skiif64.DependencyInjection",
+  "name": "com.skiif64.dependencyinjection",
   "version": "1.0.0",
   "displayName": "Dependency Injection",
   "description": "Dependency Injection implementation",
