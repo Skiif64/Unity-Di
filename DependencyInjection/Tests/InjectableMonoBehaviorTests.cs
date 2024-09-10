@@ -13,12 +13,12 @@ namespace DependencyInjection.Tests
         public IEnumerator Awake_ShouldInjectRequiredDependencies()
         {
             var options = new ServiceContainerOptionsBuilder()
-                .Register<IMockService, MockService>()
+                .Register<IMockService, MockService>(ServiceLifetime.Transient)
                 .Build();
             
             ServiceContainer.Instance.Initialize(options);
             //yield return null;
-            var actual = new GameObject("[TestObject]").AddComponent<MockComponent>();
+            var actual = new GameObject("[TestObject]").AddComponent<InjectableMockComponent>();
             //yield return new WaitForSeconds(0.1f);
             Assert.That(actual.Service, Is.Not.Null);
             yield break;

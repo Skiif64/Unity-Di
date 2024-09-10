@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace DependencyInjection.Base
 {
+    [Obsolete("This class may remove in future update")]
     public abstract class InjectableMonoBehavior : MonoBehaviour
     {
         private static readonly List<Action<IServiceProvider>> CachedAccessors = new();

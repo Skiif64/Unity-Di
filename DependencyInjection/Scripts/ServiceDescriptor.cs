@@ -10,16 +10,18 @@ namespace DependencyInjection
     {
         public Type RegistrationType { get; }
         public Type ImplementationType { get; }
+        public ServiceLifetime Lifetime { get; }
 
         private Func<IServiceProvider, object> _compiledFactoryMethod;
 
-        public ServiceDescriptor(Type registrationType, Type implementationType)
+        public ServiceDescriptor(Type registrationType, Type implementationType, ServiceLifetime lifetime = ServiceLifetime.Transient)
         {
             if (!registrationType.IsAssignableFrom(implementationType)) 
                 throw new ArgumentException($"{registrationType.Name} is not assignable from {implementationType.Name}");
             
             RegistrationType = registrationType;
             ImplementationType = implementationType;
+            Lifetime = lifetime;
         }
         
         public object CreateInstance(IServiceProvider provider)
@@ -68,5 +70,12 @@ namespace DependencyInjection
 
             return lambda.Compile();
         }
+    }
+
+    public enum ServiceLifetime
+    {
+        Transient,
+        Scene,
+        Global
     }
 }
